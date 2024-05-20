@@ -193,4 +193,27 @@ body {
     width: 100%;
     height: 610px;
     background-image: url(LOGIN.png);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.login .topo{
+    font-family:"Shadows Into Light Two" ;
+    text-align: center;
+}
+.login .topo a{
+    text-decoration: none;
+    color: #D91E2E;
+}
+.login .topo h1{
+    color: #94E1F2;
+    font-family: "Lilita One";
+    font-size: 40px;
+}
+.login .infos{
+    height: 30%;
+}
+.login .botão{
+    height: 20%;
 }
