@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background-color: white;
+    cursor: default;
 }
 
 .nav{
@@ -135,8 +136,12 @@ body {
     border-radius: 20px;
     background-color: white;
     font-family: "Shadows Into Light Two";
-    color: #94E1F2;
     font-size: 20px;
+    cursor: pointer;
+}
+.Projeto .Explica button a{
+     color: #94E1F2;
+     text-decoration: none;
 }
 
 .fundo_sobre{
@@ -157,19 +162,25 @@ body {
 .fundo_sobre .sobre h1{
     color: white;
     font-family: "Lilita One";
+    font-size: 40px;
 }
 .fundo_sobre .sobre .Cria{
-    width: 60%;
+    width: 65%;
     display: flex;
     flex-direction: row-reverse;
     align-items: center; 
     justify-content: space-around;
+    font-family:"Shadows Into Light Two" ;
+    color: white;
+    text-align: center;
 }
 .fundo_sobre .sobre .Cria img{
     width: 60%;
     border-radius: 50%;
 }
-.fundo_sobre .sobre .Cria .texto{
-    width: 40%px;
+.fundo_sobre .sobre .texto{
+    width: 50%;
     text-align: center;
+    font-family:"Shadows Into Light Two" ;
+    color: white;
 }
