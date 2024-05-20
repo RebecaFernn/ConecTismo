@@ -45,7 +45,6 @@ body {
 }
 
 .footer{
-    margin-top: 10px;
     width:100% ;
     height: 100px;
     background-color: #55A6D9;
@@ -138,4 +137,39 @@ body {
     font-family: "Shadows Into Light Two";
     color: #94E1F2;
     font-size: 20px;
+}
+
+.fundo_sobre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fundo_sobre .sobre{
+    width: 80%;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: url(FUNDO.png);
+    background-repeat: no-repeat;
+}
+.fundo_sobre .sobre h1{
+    color: white;
+    font-family: "Lilita One";
+}
+.fundo_sobre .sobre .Cria{
+    width: 60%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center; 
+    justify-content: space-around;
+}
+.fundo_sobre .sobre .Cria img{
+    width: 60%;
+    border-radius: 50%;
+}
+.fundo_sobre .sobre .Cria .texto{
+    width: 40%px;
+    text-align: center;
 }
