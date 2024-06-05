@@ -10,6 +10,23 @@ function avaliacao(valor, idUsuario) {
     return database.executar(instrucaoSql);
 }
 
+function grafico1() {
+
+    var instrucaoSql = `SELECT
+         a.valor,
+    COUNT(*) AS avaliação
+    FROM
+        avaliacao a
+    GROUP BY
+        a.valor;
+    `;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
 module.exports = {
-    avaliacao
+    avaliacao,
+    grafico1
 };
