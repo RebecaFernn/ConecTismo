@@ -1,0 +1,160 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+}
+.NAV{
+    background-color: white;
+    width: 24%;
+    height: 100%;
+    border-right: #F2D335 solid 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.NAV .sair{
+    width: 100%;
+    display: flex;
+    margin-left: 120px;
+}
+.NAV .sair button{
+    width: 40px;
+    height: 40px;
+    color: white;
+    background-color: #55A6D9;
+    border: #55A6D9 solid 2px;
+    font-size: 23px;
+    border-radius: 50%;
+}
+.NAV .user{
+    color: #D91E2E;
+    width: 50%;
+    height: 70px;
+    border: #D91E2E solid 2px;
+    text-align: center;
+    border-radius: 20px;
+    font-family: "Lilita One";
+}
+.NAV b{
+    color: #94E1F2;
+    font-family: "Lilita One";
+    font-size: 20px;
+    -webkit-text-stroke-width: 1px; 
+    -webkit-text-stroke-color: #55A6D9; 
+}
+.NAV a{
+    color: #55A6D9;
+    font-family: "Lilita One";
+    font-size: 20px;
+    text-decoration: none;
+}
+.NAV img{
+    width: 50%;
+    height: 160px;
+}
+
+.Conteudo {
+    width: 76%;
+    height: 100%;
+    background-color: white;
+    overflow: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Conteudo::-webkit-scrollbar{
+    width: 15px;
+    background-color: #94E1F2;
+    border-left: #55A6D9 dashed 2px;
+}
+.Conteudo::-webkit-scrollbar-thumb{
+    background-color: #55A6D9;
+    border: #94E1F2 dashed 2px;
+    border-radius: 20px;
+    margin: 10px;
+}
+.Conteudo h1{
+    color: #D91E2E;
+    font-family: "Lilita One" ;
+}
+.Conteudo .container{
+    width: 80%;
+}
+.Conteudo .container h1{
+    font-size: 20px;
+    color: #55A6D9;
+}
+.Conteudo .publi{
+    background-color: white;
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 30px;
+    border: #F2D335 dashed 3px;
+    border-radius: 20px;
+    font-family: "Shadows Into Light Two";
+}
+.Conteudo .publi input{
+    border: #55A6D9 dashed 2px;
+    width: 100%;
+    font-family:"Poppins";
+    outline: none;
+}
+.Conteudo .publi textarea{
+    border: #55A6D9 dashed 2px;
+    width: 100%;
+    height: 60px;
+    font-family:"Poppins";
+    outline: none;
+}
+.Conteudo .publi button{
+    height: 40px;
+    width: 70px;
+    background-color: #55A6D9;
+    color: white;
+    border: #94E1F2 solid 2px;
+    border-radius: 20px;
+}
+.Conteudo .traço{
+    width: 70%;
+    height: 20px;
+    border-bottom: #55A6D9 dashed 3px;
+    margin-top: 30px;
+}
+
+.Conteudo .feed-container{
+    margin: 30px;
+    background-color: white;
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 30px;
+    border: #F2D335 dashed 3px;
+    border-radius: 20px;
+    font-family: "Shadows Into Light Two";
+}
+.Conteudo .feed-container b{
+    font-family: "Poppins";
+}
+.Conteudo .feed-container .publicacao{
+    border-bottom: #55A6D9 solid 2px;
+}
+.Conteudo .feed-container .publicacao-btn-editar {
+    cursor: pointer;
+    font-family:"Lilita One";
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 5px 8px;
+    color: white;
+    background-color: #D91E2E;
+    width: 80px;
+    border:#b81623 solid 2px;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConecTismo</title>
+    <link rel="shortcut icon" href="assets/Icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="Conectismo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--NAV-->
+    <div class="nav">
+        <div class="titulo">
+        <h1>ConecTismo</h1>
+        </div>
+        <div class="fundo">
+            <div>
+                <a href="index.html">home</a>
+                |
+                <a href="sobre.html">sobre o projeto</a>
+                |
+                <a href="ods.html">ods</a>
+            </div>
+            <img src="assets/Logo (1).png" alt="">
+            <div>
+                <b>login</b>
+                |
+                <a href="cadastro.html">cadastro</a>
+            </div>
+        </div>   
+    </div>
+
+     <!--LOGIN-->
+     <div class="login">
+        <div class="topo">
+            <h1>Bem Vindo!</h1>
+            <b>
+                novo por aqui? <a href="cadastro.html">cadastre-se</a>
+            </b>
+        </div>
+        <div class="infos">
+            <b>email </b><br>
+            <input id="email_input" type="email"> <br> <br>
+            <b>senha</b>  <br>
+            <input id="senha_input" type="password"> <br>
+        </div>
+        <div class="botão">
+            <button onclick="entrar()">ENTRAR</button>
+        </div>
+     </div>
+
+     <!--FOOTER-->
+     <div class="footer">
+        <b>©Conectismo - 2024</b>
+        <b>rebeca.santos@sptech.school</b>
+    </div>
+</body>
+</html>
+
+<script>
+
+
+    function entrar() {
+        
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            alert ("Mensagem de erro para todos os campos em branco");
+            
+            return false;
+        }
+
+            
+            console.log("FORM LOGIN: ", emailVar);
+            console.log("FORM SENHA: ", senhaVar);
+            
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+        
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                       window.location = "mural.html"
+                     // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+</script>
