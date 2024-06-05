@@ -20,7 +20,7 @@
     
 </head>
 
-<body onload="validarSessao(), atualizarFeed()" style="background-color: #161618;">
+<body style="background-color: #161618;">
 
     <div class="NAV">
         <div class="sair">
@@ -36,6 +36,13 @@
     </div>
     
     <div class="Conteudo">
+        <div class="estrelas">
+            <div onclick="estrela1()"></div>
+            <div onclick="estrela2()"></div>
+            <div onclick="estrela3()"></div>
+            <div onclick="estrela4()"></div>
+            <div onclick="estrela5()"></div>
+        </div>
         
     </div>
 
@@ -46,6 +53,97 @@
 </html>
 
 <script>
+
+    var avaliação = []
     
+    function avaliacao() {
     
+
+    
+    var valor = avaliação[0];
+    var idUsuario = sessionStorage.ID_USUARIO;
+    
+
+    fetch("/grafico/avaliacao", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        valorServer : valor,
+        idUsuarioServer : idUsuario
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+
+          alert
+            ("Avaliação realizada");
+
+
+        }else {
+          throw "Houve um erro ao tentar realizar o cadastro da avaliação!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        
+      });
+
+    return false;
+  }
+
+
+    function estrela1() {
+        if (avaliação.length == 0) {
+            avaliação.push("indiferença")
+            alert("Agradecemos a sua avaliação!")
+            
+            avaliacao()
+        }else{
+            alert("Você já avaliou")
+        }
+    }
+    function estrela2() {
+        if (avaliação.length == 0) {
+            avaliação.push("melhorar")
+            alert("Agradecemos a sua avaliação!")
+
+            avaliacao()
+        }else{
+            alert("Você já avaliou")
+        }
+    }
+    function estrela3() {
+        if (avaliação.length == 0) {
+            avaliação.push("apoio")
+            alert("Agradecemos a sua avaliação!")
+
+            avaliacao()
+        }else{
+            alert("Você já avaliou")
+        }
+    }
+    function estrela4() {
+        if (avaliação.length == 0) {
+            avaliação.push("gostei")
+            alert("Agradecemos a sua avaliação!")
+            
+            avaliacao()
+        }else{
+            alert("Você já avaliou")
+        }
+    }
+    function estrela5() {
+        if (avaliação.length == 0) {
+            avaliação.push("amei")
+            alert("Agradecemos a sua avaliação!")
+            
+            avaliacao()
+        }else{
+            alert("Você já avaliou")
+        }
+    }
 </script>

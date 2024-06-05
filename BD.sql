@@ -18,5 +18,13 @@ CREATE TABLE aviso (
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 );
 
+CREATE TABLE avaliacao (
+	id int AUTO_INCREMENT,
+	valor varchar(20),
+	fk_usuario int,
+	FOREIGN KEY (fk_usuario) REFERENCES usuario(id),
+	PRIMARY KEY (id, fk_usuario)
+);
+
  select * from usuario;
 

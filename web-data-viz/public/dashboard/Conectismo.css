@@ -158,3 +158,31 @@ body{
     width: 80px;
     border:#b81623 solid 2px;
 }
+
+.estrelas{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.estrelas div{
+    height: 100px;
+    width: 100px;
+    background-image: url(estrela-1.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+.estrelas div:hover{
+    height: 100px;
+    width: 100px;
+    background-image: url(estrela-2.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    border: #55A6D9 dashed 2px;
+    border-radius: 50%;
+}
+
+
