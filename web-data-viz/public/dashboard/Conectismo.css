@@ -167,16 +167,16 @@ body{
     justify-content: space-evenly;
 }
 .estrelas div{
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
     background-image: url(estrela-1.png);
     background-repeat: no-repeat;
     background-size: 100%;
 
 }
 .estrelas div:hover{
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
     background-image: url(estrela-2.png);
     background-repeat: no-repeat;
     background-size: 100%;
@@ -184,5 +184,47 @@ body{
     border: #55A6D9 dashed 2px;
     border-radius: 50%;
 }
+.Conteudo .grafico{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
 
+}
+.Conteudo .grafico h1{
+    font-family: "Shadows Into Light Two" ;
+    color: black;
+}
+.Conteudo .grafico .grafico_in{
+    width: 60%;
+    height: 300px;
+    padding: 20px;
+    
+}
+.Conteudo .av h1{
+    font-family: "Shadows Into Light Two" ;
+    color: black;
+}
+
+.Conteudo .grafico2{
+    width: 90%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    border: #F2D335 dashed 3px;
+    border-radius: 20px;
+}
+.Conteudo .grafico2 h1{
+    font-family: "Shadows Into Light Two" ;
+    color: black;
+}
+.Conteudo .grafico2 .grafico_in{
+    width: 25%;
+    padding: 20px;
+    
+}

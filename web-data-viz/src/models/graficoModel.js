@@ -25,8 +25,23 @@ function grafico1() {
     return database.executar(instrucaoSql);
 }
 
+function grafico2() {
+
+    var instrucaoSql = ` SELECT
+        u.tipo,
+        COUNT(*) AS 'usuário'
+    FROM
+        usuario u
+    GROUP BY
+    u.tipo;
+    `;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
 module.exports = {
     avaliacao,
-    grafico1
+    grafico1,
+    grafico2
 };
