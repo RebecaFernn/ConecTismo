@@ -172,7 +172,7 @@ body::-webkit-scrollbar-thumb{
     height: 750px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     background-image: url(assets/FUNDO.png);
     background-repeat: no-repeat;
@@ -180,10 +180,11 @@ body::-webkit-scrollbar-thumb{
 .fundo_sobre .sobre h1{
     color: white;
     font-family: "Lilita One";
-    font-size: 40px;
+    font-size: 30px;
 }
 .fundo_sobre .sobre .Cria{
-    width: 65%;
+    width: 60%;
+    height: 300px;
     display: flex;
     flex-direction: row-reverse;
     align-items: center; 
@@ -193,7 +194,7 @@ body::-webkit-scrollbar-thumb{
     text-align: center;
 }
 .fundo_sobre .sobre .Cria img{
-    width: 60%;
+    width: 20%;
     border-radius: 50%;
 }
 .fundo_sobre .sobre .texto{
@@ -201,7 +202,29 @@ body::-webkit-scrollbar-thumb{
     text-align: center;
     font-family:"Shadows Into Light Two" ;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
+.fundo_sobre .sobre .texto a{
+    text-decoration: none;
+    margin-bottom: -20;
+    color: #94E1F2;
+    cursor: pointer;
+}
+.fundo_sobre .sobre .Cria .texto{
+    width: 70%;
+    text-align: center;
+    font-family:"Shadows Into Light Two" ;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+}
+
 
 .login{
     width: 100%;
