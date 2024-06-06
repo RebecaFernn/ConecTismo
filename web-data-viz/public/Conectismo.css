@@ -79,7 +79,7 @@ body::-webkit-scrollbar-thumb{
 
 .TEA {
     width: 100%;
-    height: 300px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -92,15 +92,21 @@ body::-webkit-scrollbar-thumb{
 }
 .TEA .texto{
     width: 90%;
-    height: 200px;
+    height: auto;
     background-color: white;
     border: #F2D335 solid 3px;
     border-radius: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     font-family: "Shadows Into Light Two" ;
     color: black;
     font-size: 17px;
+    padding: 40px;
+    text-align: center;
+}
+.TEA .texto b{
+    color: #D91E2E;
 }
 
 .Projeto {
