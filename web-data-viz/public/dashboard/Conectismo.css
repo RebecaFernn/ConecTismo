@@ -228,3 +228,17 @@ body{
     padding: 20px;
     
 }
+
+.Agradecimento{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.Agradecimento h3{
+    font-family:"Lilita One" ;
+    color: #55A6D9;
+    font-size: 30px;
+}
