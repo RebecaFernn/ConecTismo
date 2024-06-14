@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="assets/Icon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConecTismo</title>
+
+    <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="dashboard/Conectismo.css">
+    <script src="../js/sessao.js"></script>
+    <script src="./../js/alerta.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+</head>
+
+<body style="background-color: #161618;">
+
+    <div class="NAV">
+        <div class="sair">
+            <button onclick="limparSessao()">⬅</button>
+        </div>
+        <div class="user">
+            <h2><span id="b_usuario">usuário</span></h2>
+        </div>
+        <a href="mural.html">Página Inicial</a>
+        <b>Extras</b>
+        <a href="perfil.html">Sobre</a>
+        <img src="assets/Logo (2).png" alt="">
+        
+    </div>
+    
+    <div class="Conteudo">
+       
+        <h1>conecTismo</h1>
+
+        <div id="Opção" class="extras">
+            <button onclick="simula()">Simular Consultas</button>
+            <button onclick="testa()">Testar Conhecimentos</button>
+        </div>
+
+        <div class="extras" id="simular">
+            <div class="simulação">
+                <h2>
+                    Simular datas das suas consultas
+                </h2>
+                Aqui você poderá simular suas futuras consultas no período de 30 dias <br> <br>
+                Tipo de Consulta:
+                <input id="consulta_nome" type="text" placeholder="exemplo: Psiquiatra">
+                Pausa entre as Consultas:
+                <input id="consulta_pausa" type="number" placeholder="exemplo: 3 dias">
+                <button onclick="Consulta()">Simular Consultas</button>
+                <div id="result"></div>
+            </div>
+        </div>
+        <div class="extras" id="testar">
+            <div class="simulação">
+                <h2>Testar seus conhecimentos</h2>
+                Aqui você poderá testar seus conhecimentos sobre TEA
+
+                <div class="perguntas">
+                    <b>1. O que é Transtorno do Espectro Autista (TEA)?</b>
+                    <select id="pergunta_1">
+                        <option disabled selected value="#">Selecione uma Alternativa</option>
+                        <option value="1">a. Um transtorno neuropsiquiátrico que afeta a interação social, comunicação e comportamento</option>
+                        <option value="2">b. Uma condição médica que afeta o fígado</option>
+                        <option value="3">c. Uma doença contagiosa</option>
+                        <option value="4">d. Um tipo de transtorno alimentar</option>
+                    </select>
+                    <b>2. Qual dos seguintes é um sinal comum de autismo em crianças?</b>
+                    <select id="pergunta_2">
+                        <option disabled selected value="#">Selecione uma Alternativa</option>
+                        <option value="1">a. Perda de apetite</option>
+                        <option value="2">b. Dificuldade em manter o contato visual</option>
+                        <option value="3">c. Febre alta</option>
+                        <option value="4">d. Alta energia e agitação constante</option>
+                    </select>
+                    <b>3. Quais são os tipos de intervenções frequentemente utilizadas para tratar o autismo?</b>
+                    <select id="pergunta_3">
+                        <option disabled selected value="#">Selecione uma Alternativa</option>
+                        <option value="1">a. Quimioterapia e radioterapia</option>
+                        <option value="2">b. Terapias comportamentais, como ABA (Análise do Comportamento Aplicada)</option>
+                        <option value="3">c. Apenas medicamentos antidepressivos</option>
+                        <option value="4">d. Cirurgia</option>
+                    </select>
+                    <b>4. Qual é uma característica comum do espectro autista em adultos?</b>
+                    <select id="pergunta_4">
+                        <option disabled selected value="#">Selecione uma Alternativa</option>
+                        <option value="1">a. Facilidade extrema em fazer amigos</option>
+                        <option value="2">b. Necessidade constante de dormir</option>
+                        <option value="3">c. Dificuldade em entender nuances sociais e comunicação não verbal</option>
+                        <option value="4">d. Interesse em esportes radicais</option>
+                    </select>
+                    <b>5. Quais são alguns dos desafios comuns enfrentados por adultos autistas no ambiente de trabalho?</b>
+                    <select id="pergunta_5">
+                        <option disabled selected value="#">Selecione uma Alternativa</option>
+                        <option value="1">a. Dificuldade em entender e participar de política de escritório</option>
+                        <option value="2">b. Habilidades de comunicação excessivamente desenvolvidas</option>
+                        <option value="3">c. Necessidade de licença médica constante</option>
+                        <option value="4">d. Inaptidão para qualquer tipo de trabalho manual</option>
+                    </select>
+
+                    <button onclick="TEA()">Ver Resultado</button>
+
+                </div>
+
+                <div id="resultado">
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+    simular.style.display = "none"
+    testar.style.display = "none"
+
+    function simula() {
+        testar.style.display = "none"
+        simular.style.display = "flex"
+    }
+
+    function testa() {
+        testar.style.display = "flex"
+        simular.style.display = "none"
+    }
+
+    function Consulta() {
+        
+        var consulta = consulta_nome.value
+        var pausa = consulta_pausa.value
+
+        result.innerHTML = ""
+        result.innerHTML = `Pela simulação você terá consultas: <br> (se iniciasse hoje)`
+
+        for (var index = 0; index < 30; index++) {
+            var dias = index % pausa
+
+            if (dias == 0) {
+                result.innerHTML += `<br>Dia ${index + 1}- ${consulta} <br>`
+            }
+            else {
+                result.innerHTML += `<br>Dia ${index + 1}- Comer, dormir etc <br> `
+            }
+            
+        }
+    }
+
+    function TEA() {
+        var pergunta1 = pergunta_1.value
+        var pergunta2 = pergunta_2.value
+        var pergunta3 = pergunta_3.value
+        var pergunta4 = pergunta_4.value
+        var pergunta5 = pergunta_5.value
+
+        if (pergunta1 == "#" || pergunta2 == "#" || pergunta3 == "#" || pergunta4 == "#" || pergunta5 == "#") {
+            resultado.innerHTML = `Preencha todos os campos`
+        }else{
+            var pontos = 0
+            if (pergunta1 == 1) {
+                pontos ++
+            }
+
+            if (pergunta2 == 2) {
+                pontos++
+            }
+
+            if (pergunta3 == 2) {
+                pontos++
+            }
+
+            if (pergunta4 == 3) {
+                pontos++
+            }
+
+            if (pergunta5 == 1) {
+                pontos++
+            }
+
+            resultado.innerHTML = `Sua pontuação final foi : ${pontos}/5`
+
+            if (pontos == 5) {
+                resultado.innerHTML += `<br> Parabéns, você conhece muito!`
+            } else if (pontos == 3 || pontos == 4) {
+                resultado.innerHTML += `<br> Que bom que você já viu sobre... <br> Continue estudando!`
+            } else{
+                resultado.innerHTML += `<br> Você não foi muito bem, mas continue na conecTismo para aprender mais!`
+            }
+        }
+    }
+
+</script>
